@@ -1,0 +1,1 @@
+export const EQUATORIAL_EARTH_RADIUS = 6378.1;

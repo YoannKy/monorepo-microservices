@@ -1,0 +1,93 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/concerts-gateway/src",
+  "monorepo": true,
+  "root": "apps/concerts-gateway",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/concerts-gateway/tsconfig.app.json"
+  },
+  "projects": {
+    "concerts-gateway": {
+      "type": "application",
+      "root": "apps/concerts-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/concerts-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/concerts-gateway/tsconfig.app.json"
+      }
+    },
+    "venues": {
+      "type": "application",
+      "root": "apps/venues",
+      "entryFile": "main",
+      "sourceRoot": "apps/venues/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/venues/tsconfig.app.json"
+      }
+    },
+    "concerts": {
+      "type": "application",
+      "root": "apps/concerts",
+      "entryFile": "main",
+      "sourceRoot": "apps/concerts/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/concerts/tsconfig.app.json"
+      }
+    },
+    "bands": {
+      "type": "application",
+      "root": "apps/bands",
+      "entryFile": "main",
+      "sourceRoot": "apps/bands/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/bands/tsconfig.app.json"
+      }
+    },
+    "exceptions": {
+      "type": "library",
+      "root": "libs/exceptions",
+      "entryFile": "index",
+      "sourceRoot": "libs/exceptions/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/exceptions/tsconfig.lib.json"
+      }
+    },
+    "validator": {
+      "type": "library",
+      "root": "libs/validator",
+      "entryFile": "index",
+      "sourceRoot": "libs/validator/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/validator/tsconfig.lib.json"
+      }
+    },
+    "band-model": {
+      "type": "library",
+      "root": "libs/band-model",
+      "entryFile": "index",
+      "sourceRoot": "libs/band-model/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/band-model/tsconfig.lib.json"
+      }
+    },
+    "concert-model": {
+      "type": "library",
+      "root": "libs/concert-model",
+      "entryFile": "index",
+      "sourceRoot": "libs/concert-model/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/concert-model/tsconfig.lib.json"
+      }
+    },
+    "venue-model": {
+      "type": "library",
+      "root": "libs/venue-model",
+      "entryFile": "index",
+      "sourceRoot": "libs/venue-model/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/venue-model/tsconfig.lib.json"
+      }
+    }
+  }
+}

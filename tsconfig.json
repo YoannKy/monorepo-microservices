@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@libs/exceptions": [
+        "libs/exceptions/src"
+      ],
+      "@libs/exceptions/*": [
+        "libs/exceptions/src/*"
+      ],
+      "@libs/validator": [
+        "libs/validator/src"
+      ],
+      "@libs/validator/*": [
+        "libs/validator/src/*"
+      ],
+      "@libs/band-model": [
+        "libs/band-model/src"
+      ],
+      "@libs/band-model/*": [
+        "libs/band-model/src/*"
+      ],
+      "@libs/concert-model": [
+        "libs/concert-model/src"
+      ],
+      "@libs/concert-model/*": [
+        "libs/concert-model/src/*"
+      ],
+      "@libs/venue-model": [
+        "libs/venue-model/src"
+      ],
+      "@libs/venue-model/*": [
+        "libs/venue-model/src/*"
+      ],
+      "@json/bands/bands.test": [
+        "scripts/bands/bands.test.json"
+      ],
+      "@json/venues/venues.test": [
+        "scripts/venues/venues.test.json"
+      ],
+      "@json/concerts/concerts.test": [
+        "scripts/concerts/concerts.test.json"
+      ]
+    },
+    "esModuleInterop": true
+  }
+}

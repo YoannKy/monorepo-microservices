@@ -1,0 +1,56 @@
+version: '3'
+services:
+  mongo_venues_test:
+    image: mongo:latest
+    networks:
+      - mongo-test
+    container_name: we-maintain-venues-db-test
+    command: mongod --port ${MONGO_PORT_VENUES}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER_VENUES}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD_VENUES}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE_VENUES}
+      MONGO_USER: ${MONGO_USER_VENUES}
+      MONGO_PASSWORD: ${MONGO_PASSWORD_VENUES}
+    ports:
+      - ${MONGO_PORT_VENUES}:${MONGO_PORT_VENUES}
+    volumes:
+      - "./scripts/venues/venues.test.json:/docker-entrypoint-initdb.d/venues.json"
+      - "./scripts/seed.sh:/docker-entrypoint-initdb.d/seed.sh"
+  mongo_bands_test:
+    image: mongo:latest
+    networks:
+      - mongo-test
+    container_name: we-maintain-bands-db-test
+    command: mongod --port ${MONGO_PORT_BANDS}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER_BANDS}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD_BANDS}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE_BANDS}
+      MONGO_USER: ${MONGO_USER_BANDS}
+      MONGO_PASSWORD: ${MONGO_PASSWORD_BANDS}
+    ports:
+      - ${MONGO_PORT_BANDS}:${MONGO_PORT_BANDS}
+    volumes:
+      - "./scripts/bands/bands.test.json:/docker-entrypoint-initdb.d/bands.json"
+      - "./scripts/seed.sh:/docker-entrypoint-initdb.d/seed.sh"
+  mongo_concerts_test:
+    image: mongo:latest
+    networks:
+      - mongo-test
+    container_name: we-maintain-concerts-db-test
+    command: mongod --port ${MONGO_PORT_CONCERTS}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER_CONCERTS}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD_CONCERTS}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE_CONCERTS}
+      MONGO_USER: ${MONGO_USER_CONCERTS}
+      MONGO_PASSWORD: ${MONGO_PASSWORD_CONCERTS}
+    ports:
+      - ${MONGO_PORT_CONCERTS}:${MONGO_PORT_CONCERTS}
+    volumes:
+      - "./scripts/concerts/concerts.test.json:/docker-entrypoint-initdb.d/concerts.json"
+      - "./scripts/seed.sh:/docker-entrypoint-initdb.d/seed.sh"
+networks:
+  mongo-test:
+    driver: bridge
