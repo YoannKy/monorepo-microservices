@@ -45,6 +45,19 @@ Ideally each microservices should have its own repository and common code should
 Since the project is dockeriez there is a Makefile in the project,
 
 #### SETTING UP THE PROJECT
+
+This project works on node 12.22.12
+
+Make sure nvm is installed (https://github.com/nvm-sh/nvm#installing-and-updating) 
+
+then
+
+```
+nvm use
+```
+
+After the node version has been set up do:
+
 ```
 make
 ```
